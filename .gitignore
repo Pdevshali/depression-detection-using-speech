@@ -1,0 +1,37 @@
+
+---
+
+# 📄 **2. `.gitignore` (Ready to Use)**
+
+```gitignore
+# Python
+__pycache__/
+*.pyc
+
+# Virtual env
+venv/
+
+# Models
+models_res/
+*.joblib
+*.npy
+
+# Audio
+*.wav
+*.mp3
+userdata/
+
+# FFmpeg binaries
+ffmpeg/
+ffprobe/
+
+# IDE
+.vscode/
+
+# Streamlit cache
+.streamlit/
+
+# Env vars
+.env
+
+test.py

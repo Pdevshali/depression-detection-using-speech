@@ -1,0 +1,14 @@
+streamlit
+audiorecorder
+pydub
+fastapi
+uvicorn
+requests
+transformers
+torch
+numpy
+librosa
+soundfile
+scikit-learn
+xgboost
+joblib
