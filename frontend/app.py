@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from io import BytesIO
 
-from audiorecorder import audiorecorder  # pip install streamlit-audiorecorder
+from audiorecorder import audiorecorder  #from pip install streamlit-audiorecorder
 
 # 👉 Change this if your backend runs elsewhere
 API_URL = "http://localhost:8000/predict-audio"
@@ -162,13 +162,14 @@ if st.button("Send answer"):
         with st.spinner("Analyzing your voice..."):
             files = {"file": (filename, audio_bytes, "audio/wav")}
             try:
-                resp = requests.post(API_URL, files=files, timeout=120)
+                resp = requests.post(API_URL, files=files, timeout=1000)
                 data = resp.json()
-            except Exception as e:
+            except requests.exceptions.ReadTimeout as e:
                 st.error(f"Error contacting backend: {e}")
                 data = None
 
         if data is None:
+            st.error(f"Error contacting backend: no response received.")
             st.stop()
 
         if not data.get("ok", False):
