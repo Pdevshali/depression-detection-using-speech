@@ -141,7 +141,7 @@ if os.path.exists(single_model_path):
     print("Loaded single-model fallback:", single_model_path)
 
 # For deployment, you liked 0.45 as threshold:
-DEFAULT_DEPLOY_THRESH = 0.438
+DEFAULT_DEPLOY_THRESH = 0.44
 
 # ---------------- Prediction helpers ----------------
 def chunk_level_probs_for_wave(y, sr, model, scaler=None, seg_s=SEG_S, overlap_s=OVERLAP_S, verbose=False):
